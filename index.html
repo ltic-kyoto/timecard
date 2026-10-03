@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webアプリ</title>
+  <style>
+    body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+    iframe { width: 100%; height: 100%; border: none; }
+  </style>
+</head>
+<body>
+  <iframe id="gas-frame" src=""></iframe>
+
+  <script>
+    // あなたのGASのウェブアプリURL（末尾は /exec）
+    const gasBaseUrl = "https://script.google.com/s/AKfycbyFi4k0Gz4-3NtD1JvpiH2_uNV4B3RLAc-lxCWyfUTHXKbrUJgysIfT6vHC2eDbx528Cw/exec";
+
+    // アクセスされたURLのパラメータ（?id=002 など）を取得
+    const queryString = window.location.search;
+
+    // GASのURLにパラメータを自動付与してiframeにセット
+    document.getElementById("gas-frame").src = gasBaseUrl + queryString;
+  </script>
+</body>
+</html>
